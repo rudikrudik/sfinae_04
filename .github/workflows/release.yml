@@ -26,7 +26,7 @@ jobs:
           write-output $env:build_number | echo ${{ steps.buildnumber.outputs.build_number }}
 
       - name: Get commit count
-        run: git rev-list --count 04.homework
+        run: git rev-list --count ${{ github.github.ref_name }}
 
       - name: Print new build number
         run: echo "Build number is ${{ steps.buildnumber.outputs.build_number }}"
