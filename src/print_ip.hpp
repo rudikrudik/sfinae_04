@@ -54,7 +54,7 @@ struct PrintTuple
     {
         auto number = std::get<sizeof...(Types) + 1 - I>(tuple);
         std::cout << number;
-        if (I > 1)
+        if constexpr (I > 1)
             std::cout << '.';
 
         PrintTuple<I - 1>::Print(tuple);
