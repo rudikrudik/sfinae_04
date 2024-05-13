@@ -25,10 +25,7 @@ jobs:
           prefix: ${{ github.github.ref_name }}
 
       - name: Run a one-line script
-        run: |
-          echo "checking count"
-          $count = git log --oneline | wc -l
-          echo $count
+        run: echo "checking count" $count = git log --oneline | wc -l
 
       - name: Print new build number
         run: echo "Build number is ${{ steps.buildnumber.outputs.build_number }}"
