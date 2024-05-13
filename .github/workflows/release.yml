@@ -35,7 +35,7 @@ jobs:
           draft: false
           prerelease: false
       - name: Rename create file
-        run: mv ip_filter-0.0.1-Linux.deb ip_filter-0.0.${{ env.BUILD_NUMBER }}-Linux.deb
+        run: mv sfinae-0.0.1-Linux.deb sfinae-0.0.${{ env.BUILD_NUMBER }}-Linux.deb
       - name: List directory
         run: ls -a
       - name: Upload Release Asset
