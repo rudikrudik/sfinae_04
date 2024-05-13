@@ -21,7 +21,7 @@ jobs:
         uses: onyxmueller/build-tag-number@v1
         with:
           token: ${{ secrets.github_token }}
-          prefix: ${{ github.github.ref_name }}
+          prefix: ${{ github.github.04.homework }}
       - run: | 
           write-output $env:build_number | echo ${{ steps.buildnumber.outputs.build_number }}
       - name: Print new build number
