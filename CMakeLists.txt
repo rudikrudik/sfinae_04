@@ -4,6 +4,8 @@ project(04_homework)
 set(PATCH_VERSION "1" CACHE INTERNAL "Patch version")
 set(PROJECT_VERSION 0.0.${PATCH_VERSION})
 
+configure_file(src/version.h.in src/version.h)
+
 project(sfinae VERSION ${PROJECT_VERSION})
 
 set(CMAKE_CXX_STANDARD 17)
