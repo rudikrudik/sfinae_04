@@ -3,7 +3,7 @@ name: '04.homework C++ SFINAE'
 on:
   push:
     branches:
-      - 01.homework
+      - main
       - feature/github_actions
 
 jobs:
