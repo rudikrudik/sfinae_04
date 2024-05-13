@@ -22,14 +22,13 @@ jobs:
         with:
           token: ${{ secrets.github_token }}
           prefix: ${{ github.github.ref_name }}
-      - run: |
-          write-output $env:build_number | echo ${{ steps.buildnumber.outputs.build_number }}
 
       - name: Get commit count
-        run: git rev-list --count HEAD 04.homework
+        run:  git checkout develop | git rev-list --count HEAD 04.homework
 
       - name: Print new build number
         run: echo "Build number is ${{ steps.buildnumber.outputs.build_number }}"
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -40,10 +39,13 @@ jobs:
           release_name: Release SFINAE ${{ env.BUILD_NUMBER }}
           draft: false
           prerelease: false
+
       - name: Rename create file
         run: mv sfinae-0.0.1-Linux.deb sfinae-0.0.${{ env.BUILD_NUMBER }}-Linux.deb
+
       - name: List directory
         run: ls -a
+
       - name: Upload Release Asset
         id: upload-release-asset
         uses: actions/upload-release-asset@v1
